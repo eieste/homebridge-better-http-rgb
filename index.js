@@ -376,7 +376,8 @@ SHELL_RGB.prototype = {
             } else {
                 var rgb = responseBody.split(",");
                 
-                sys.print(rgb);
+                
+                (rgb);
                 
                 
                 var levels = this._rgbToHsl(
@@ -505,10 +506,11 @@ SHELL_RGB.prototype = {
         
         // executes `pwd`
         child = exec(url, function (error, stdout, stderr) {
-            //sys.print('stdout: ' + stdout);
-            //sys.print('stderr: ' + stderr);
+            sys.print('stdout: ' + stdout);
+            sys.print('stderr: ' + stderr);
             if (error !== null) {
                 console.log('exec error: ' + error);
+            }else{
                 callback(stderr, stdout, body);
             }
         });
