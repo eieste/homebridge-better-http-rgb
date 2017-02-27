@@ -474,21 +474,21 @@ SHELL_RGB.prototype = {
     _setRGB: function(callback) {
         var rgb = this._hsvToRgb(this.cache.hue, this.cache.saturation, this.cache.brightness);
 
-        if(NaN(rgb.r)){
+        if(isNaN(rgb.r)){
             var r = 0;
         }else{
             var r = rgb.r;
         }
         
         
-        if(NaN(rgb.g)){
+        if(isNaN(rgb.g)){
             var g = 0;
         }else{
             var g = rgb.g;
         }
         
         
-        if(NaN(rgb.b)){
+        if(isNaN(rgb.b)){
             var b = 0;
         }else{
             var b = rgb.b;
