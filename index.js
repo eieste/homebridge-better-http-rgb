@@ -374,11 +374,15 @@ SHELL_RGB.prototype = {
                 this.log('... getHue() failed: %s', error.message);
                 callback(error);
             } else {
-                var rgb = responseBody;
+                var rgb = responseBody.split(",");
+                
+                
+                
+                
                 var levels = this._rgbToHsl(
-                    parseInt(rgb.substr(0,2),16),
-                    parseInt(rgb.substr(2,2),16),
-                    parseInt(rgb.substr(4,2),16)
+                    parseInt(rgb[0],16),
+                    parseInt(rgb[1],16),
+                    parseInt(rgb[2],16)
                 );
 
                 var hue = levels[0];
@@ -425,11 +429,13 @@ SHELL_RGB.prototype = {
                 this.log('... getSaturation() failed: %s', error.message);
                 callback(error);
             } else {
-                var rgb = responseBody;
+                
+                var rgb = responseBody.split(",");
+                
                 var levels = this._rgbToHsl(
-                    parseInt(rgb.substr(0,2),16),
-                    parseInt(rgb.substr(2,2),16),
-                    parseInt(rgb.substr(4,2),16)
+                    parseInt(rgb[0],16),
+                    parseInt(rgb[1],16),
+                    parseInt(rgb[2],16)
                 );
 
                 var saturation = levels[1];
