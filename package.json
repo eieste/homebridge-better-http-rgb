@@ -1,5 +1,5 @@
 {
-  "name": "homebridge-better-http-rgb",
+  "name": "homebridge-shell-rgb",
   "version": "1.0.0",
   "description": "Homebridge plugin to control a web-based RGB device.",
   "license": "ISC",
@@ -21,7 +21,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/jnovack/homebridge-better-http-rgb.git"
+    "url": "git://github.com/eieste/homebridge-shell-rgb.git"
   },
   "scripts": {
     "lint": "grunt lint",

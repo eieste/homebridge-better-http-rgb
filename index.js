@@ -13,7 +13,7 @@ var exec = require('child_process').exec;
 module.exports = function(homebridge){
     Service = homebridge.hap.Service;
     Characteristic = homebridge.hap.Characteristic;
-    homebridge.registerAccessory('homebridge-better-http-rgb', 'HTTP-RGB', HTTP_RGB);
+    homebridge.registerAccessory('homebridge-shell-rgb', 'SHELL-RGB', SHELL_RGB);
 };
 
 /**
@@ -24,7 +24,7 @@ module.exports = function(homebridge){
  * @param {function} log Logging function
  * @param {object} config Your configuration object
  */
-function HTTP_RGB(log, config) {
+function SHELL_RGB(log, config) {
 
     // The logging function is required if you want your function to output
     // any information to the console in a controlled and organized manner.
