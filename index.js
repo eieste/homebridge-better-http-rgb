@@ -93,9 +93,9 @@ function SHELL_RGB(log, config) {
 
 /**
  *
- * @augments HTTP_RGB
+ * @augments SHELL_RGB
  */
-HTTP_RGB.prototype = {
+SHELL_RGB.prototype = {
 
     /** Required Functions **/
     identify: function(callback) {
