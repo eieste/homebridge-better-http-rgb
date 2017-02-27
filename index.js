@@ -376,7 +376,7 @@ SHELL_RGB.prototype = {
             } else {
                 var rgb = responseBody.split(",");
                 
-                
+                sys.print(rgb);
                 
                 
                 var levels = this._rgbToHsl(
@@ -431,7 +431,7 @@ SHELL_RGB.prototype = {
             } else {
                 
                 var rgb = responseBody.split(",");
-                
+                sys.print(rgb);
                 var levels = this._rgbToHsl(
                     parseInt(rgb[0],16),
                     parseInt(rgb[1],16),
