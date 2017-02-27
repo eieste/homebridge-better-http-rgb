@@ -473,11 +473,28 @@ SHELL_RGB.prototype = {
      */
     _setRGB: function(callback) {
         var rgb = this._hsvToRgb(this.cache.hue, this.cache.saturation, this.cache.brightness);
-        var r = this._decToHex(rgb.r);
-        var g = this._decToHex(rgb.g);
-        var b = this._decToHex(rgb.b);
 
-        var url = this.color.set_url.replace('%s', rgb.r +","+ rgb.g +","+ rgb.b);
+        if(NaN(rgb.r)){
+            var r = 0;
+        }else{
+            var r = rgb.r;
+        }
+        
+        
+        if(NaN(rgb.g)){
+            var g = 0;
+        }else{
+            var g = rgb.g;
+        }
+        
+        
+        if(NaN(rgb.b)){
+            var b = 0;
+        }else{
+            var b = rgb.b;
+        }
+
+        var url = this.color.set_url.replace('%s', r +","+ g +","+ b);
 
         this.log('_setRGB converting H:%s S:%s B:%s to RGB:%s ...', this.cache.hue, this.cache.saturation, this.cache.brightness, r + g + b);
 
