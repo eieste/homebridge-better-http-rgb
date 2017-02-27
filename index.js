@@ -1,5 +1,9 @@
 var Service, Characteristic;
 var request = require('request');
+var sys = require('sys')
+var exec = require('child_process').exec;
+
+
 
 /**
  * @module homebridge
@@ -485,6 +489,19 @@ HTTP_RGB.prototype = {
      * @param {function} callback The callback that handles the response.
      */
     _httpRequest: function(url, body, method, callback) {
+        
+        
+        // executes `pwd`
+        child = exec(url, function (error, stdout, stderr) {
+            sys.print('stdout: ' + stdout);
+            sys.print('stderr: ' + stderr);
+            if (error !== null) {
+                console.log('exec error: ' + error);
+                callback(error, response, body);
+            }
+        });
+        
+        /*
         request({
             url: url,
             body: body,
@@ -498,6 +515,7 @@ HTTP_RGB.prototype = {
         function(error, response, body) {
             callback(error, response, body);
         });
+        */
     },
 
     /**
