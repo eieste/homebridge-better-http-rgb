@@ -250,6 +250,12 @@ SHELL_RGB.prototype = {
                 this.log('getPowerState() failed: %s', error.message);
                 callback(error);
             } else {
+                if(responseBody == "ON"){
+                    responseBody = 1;
+                }else{
+                    responseBody = 0;
+                }
+                
                 var powerOn = parseInt(responseBody) > 0;
                 this.log('power is currently %s', powerOn ? 'ON' : 'OFF');
                 callback(null, powerOn);
