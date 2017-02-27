@@ -493,11 +493,11 @@ SHELL_RGB.prototype = {
         
         // executes `pwd`
         child = exec(url, function (error, stdout, stderr) {
-            sys.print('stdout: ' + stdout);
-            sys.print('stderr: ' + stderr);
+            //sys.print('stdout: ' + stdout);
+            //sys.print('stderr: ' + stderr);
             if (error !== null) {
                 console.log('exec error: ' + error);
-                callback(error, response, body);
+                callback(stderr, stdout, body);
             }
         });
         
