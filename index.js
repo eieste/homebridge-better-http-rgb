@@ -477,7 +477,7 @@ SHELL_RGB.prototype = {
         var g = this._decToHex(rgb.g);
         var b = this._decToHex(rgb.b);
 
-        var url = this.color.set_url.replace('%s', r + g + b);
+        var url = this.color.set_url.replace('%s', rgb.r +","+ rgb.g +","+ rgb.b);
 
         this.log('_setRGB converting H:%s S:%s B:%s to RGB:%s ...', this.cache.hue, this.cache.saturation, this.cache.brightness, r + g + b);
 
